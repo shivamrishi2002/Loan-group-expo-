@@ -1,13 +1,27 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 export default function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 20, marginBottom: 20 }}>💰 Loan Group App</Text>
-      <Button title="Groups" onPress={() => navigation.navigate('Groups')} />
-      <Button title="Persons" onPress={() => navigation.navigate('Persons')} />
-      <Button title="Payments" onPress={() => navigation.navigate('Payments')} />
+    <View style={styles.container}>
+      <Text style={styles.title}>Welcome to Loan Group App</Text>
+      <Button title="Go to Groups" onPress={() => navigation.navigate('Groups')} />
+      <Button title="Go to Persons" onPress={() => navigation.navigate('Persons')} />
+      <Button title="Go to Payments" onPress={() => navigation.navigate('Payments')} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+});
